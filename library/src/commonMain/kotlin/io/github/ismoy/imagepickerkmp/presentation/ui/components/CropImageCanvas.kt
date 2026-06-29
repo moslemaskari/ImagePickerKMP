@@ -31,6 +31,7 @@ import io.github.ismoy.imagepickerkmp.domain.models.PhotoResult
 import io.github.ismoy.imagepickerkmp.domain.utils.drawCropHandles
 import io.github.ismoy.imagepickerkmp.domain.utils.resizeCropRect
 import io.github.ismoy.imagepickerkmp.domain.utils.CropUtils.detectHandle
+import io.github.ismoy.imagepickerkmp.domain.extensions.absolutePath
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
@@ -67,7 +68,7 @@ import kotlin.math.min
                 .clipToBounds()
         ) {
             AsyncImage(
-                model = photoResult.uri,
+                model = photoResult.absolutePath,
                 contentDescription = "Imagen a recortar",
                 modifier = Modifier
                     .fillMaxSize()
